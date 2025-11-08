@@ -7,7 +7,7 @@ import { API } from "@/ts/api"
 //тут жестко заебланил этот стор нахер вроде не нужен файлы будут с сервака браться
 export const useCommentFilesStore = defineStore('commentFiles', {
   state: () => ({
-    index: 0 as number,
+    index: 4 as number,
     files: [] as commentFiles[],
   }),
   actions: {

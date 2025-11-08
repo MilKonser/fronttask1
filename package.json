@@ -14,7 +14,7 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.13",
+    "bootstrap": "^5.3.8",
     "filepond": "^4.32.9",
     "filepond-plugin-file-validate-type": "^1.2.9",
     "filepond-plugin-image-preview": "^4.6.12",

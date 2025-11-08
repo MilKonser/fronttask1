@@ -9,6 +9,8 @@ import CommentList from './components/comments/CommentList.vue';
 import { useUserStore } from "./stores/profile"
 import { useCommentsStore } from './stores/comments';
 
+
+
 const user = useUserStore();
 const comments = useCommentsStore()
 comments.getCommentsFromApi(0, 5, 0)
@@ -25,6 +27,7 @@ function changeUser(e: Event) {
   <Header></Header>
 
   <main>
+     
     <BlockList>
       <Block>
         <h2>Frontend - разработчик в команду проекта Стажер.online
@@ -62,7 +65,7 @@ function changeUser(e: Event) {
           <li>Возможность прикреплять файлы: изображения с превью, для остальных — иконка и название файла. <br>
           <strong>Использовал сторонию беблиотеку,классная штука этот PQINA</strong></li>
           <li>Возможность ставить реакции эмодзи. <br>
-            <strong>не сделано </strong>
+            <strong>сделано </strong>
           </li>
           <li>Валидация: нельзя отправить пустое сообщение. <br>
           <strong>сделано тут объяснять нечего </strong></li>
@@ -128,5 +131,6 @@ function changeUser(e: Event) {
       </Block>
     </BlockList>
   </main>
+
   <Footer></Footer>
 </template>

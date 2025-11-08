@@ -7,6 +7,7 @@ import { classicNameResolver } from "typescript";
 import { useUserStore } from "@/stores/profile";
 import type { FilePond, FilePondEvent, FilePondFile } from "filepond";
 import { useCommentFilesStore } from "@/stores/files";
+import ReactionsList from "./ReactionsList.vue";
 
 const { comment } = defineProps<{ comment: commentType }>();
 
@@ -21,9 +22,9 @@ if (kidsShodew == comment.kidsCount) comment.kidsRendered = true
 function showMore(): void {
     if (comment.kidsRendered) return;
     kidsShodew += useCommentsStore().getCommentsFromApi(kidsShodew, 5, comment.id)
-    console.log(kidsShodew)
     if (kidsShodew == comment.kidsCount) comment.kidsRendered = true
 }
+
 function answer(e: Event) {
     showMore();
     if (comment.papa === 0) {
@@ -54,8 +55,8 @@ function deleteComment(e: Event) {
         <div class="card-body d-flex">
             <div class="flex-fill">
             {{ comment.msg }}
-            <!-- <p>ПАПА: {{ comment.papa }}</p>
-            <p>Id: {{ comment.id }}</p> -->
+            <p>ПАПА: {{ comment.papa }}</p>
+            <p>Id: {{ comment.id }}</p>
             </div>
         <ul class="d-flex flex-column border-start">
             
@@ -77,9 +78,7 @@ function deleteComment(e: Event) {
             <h4 v-if="comment.papa == 0">Комментариев: {{ comment.kidsCount }}</h4>
             <button type="button" class="btn btn-primary" @click="answer">{{ comment.showFrom ? "Скрыть" :
                 "Ответить"}}</button>
-            <div class="comment-files">
-
-            </div>
+            <ReactionsList :commentId="comment.id"></ReactionsList>
         </div>
 
     </div>

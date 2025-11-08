@@ -103,9 +103,15 @@ const FILES = [ {
 },{
     id: 3,
     commentid:1,
-    path: "view-source:https://ru.wiktionary.org/wiki/%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA",
+    path: "/text.txt",
     name: "niggedsar",
     type: "text/html"
+},{
+    id: 4,
+    commentid:2,
+    path: "/nigertiger.jpg",
+    name: "niggedsar",
+    type: "image/"
 }
 
 ]

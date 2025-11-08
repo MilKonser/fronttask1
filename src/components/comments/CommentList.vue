@@ -2,8 +2,7 @@
 import { useCommentsStore } from '@/stores/comments';
 import Comment from './Comment.vue';
 import CommentForm from './CommentForm.vue';
-import { API } from '@/ts/api';
-import {type profile} from "@/ts/types"
+
 import { ref } from 'vue';
 
 
@@ -17,7 +16,7 @@ function setReplyNick(nick: string) {
   replyNick.value = nick;
 }
 </script>
-<template v-if="!lastlevel">
+<template>
 <div  class="commentList d-grid" >
 <template v-for="value of useCommentsStore().comments">
     <Comment v-if="value.papa == props.papa" key="{{value.id }}" @reply="setReplyNick" :comment=value ></Comment>

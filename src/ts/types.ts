@@ -27,3 +27,9 @@ export interface commentFiles {
     name: string,
     type: string
 }
+export interface Reaction {
+  id: number, // уникальный идентификатор реакции
+  type: string, // тип реакции (один символ, например эмодзи)
+  commentId: number, // id комментария, к которому привязана реакция
+  userId: number // id пользователя, который поставил реакцию
+}
